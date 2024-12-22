@@ -15,14 +15,14 @@ jobs:
     - name: Set up Arduino CLI
       uses: arduino/setup-arduino-cli@v1
       with:
-        version: 0.21.1
+       // version: 0.21.1
 
     - name: Compile Sketch
       run: |
-        arduino-cli compile --fqbn esp32:esp32:esp32 firmware.ino
+        arduino-cli compile --fqbn esp32:esp32:esp32 firmware.cpp
 
     - name: Upload Firmware
       uses: actions/upload-artifact@v2
       with:
         name: firmware
-        path: ./firmware.ino.esp32.bin
+        path: ./firmware.cpp.esp32.bin
