@@ -27,4 +27,4 @@ jobs:
       with:
         name: firmware
        // path: ./firmware.bin
-        path: ./firmware.ino.esp32.bin
+      // path: ./firmware.ino.esp32.bin
