@@ -26,4 +26,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: firmware
-        path: ./firmware.bin
+       // path: ./firmware.bin
+        path: ./firmware.ino.esp32.bin
