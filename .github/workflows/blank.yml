@@ -19,12 +19,10 @@ jobs:
 
     - name: Compile Sketch
       run: |
-       // arduino-cli compile --fqbn esp32:esp32:esp32 firmware.cpp
-       arduino-cli compile --fqbn esp32:esp32:esp32 firmware.ino
+              arduino-cli compile --fqbn esp32:esp32:esp32 firmware.cpp
 
     - name: Upload Firmware
       uses: actions/upload-artifact@v2
       with:
         name: firmware
-       // path: ./firmware.bin
-      // path: ./firmware.ino.esp32.bin
+        path: ./firmware.cpp.esp32.bin
