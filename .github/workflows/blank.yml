@@ -1,0 +1,28 @@
+name: Build and Release Firmware
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Arduino CLI
+      uses: arduino/setup-arduino-cli@v1
+      with:
+        version: 0.21.1
+
+    - name: Compile Sketch
+      run: |
+        arduino-cli compile --fqbn esp32:esp32:esp32 firmware.ino
+
+    - name: Upload Firmware
+      uses: actions/upload-artifact@v2
+      with:
+        name: firmware
+        path: ./firmware.ino.esp32.bin
